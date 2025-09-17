@@ -1,0 +1,152 @@
+/* Variáveis CSS Globais */
+:root {
+  --azul-principal: #006494;
+  --azul-escuro: #003554;
+  --azul-claro: #0582ca;
+  --azul-brilhante: #00a6fb;
+  --amarelo: #ffb700;
+  --cinza-claro: #f8f9fa;
+  --cinza: #e9ecef;
+  --preto: #212529;
+  --branco: #ffffff;
+  --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --borda-radius: 8px;
+  --transicao: all 0.3s ease;
+}
+
+/* Tipografia Base */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  color: var(--preto);
+  line-height: 1.6;
+}
+
+/* Layout Base */
+.grid-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 30px;
+  padding: 20px;
+}
+
+/* Botões e Links */
+.btn-primario {
+  background: var(--branco);
+  color: var(--azul-principal);
+  padding: 12px 25px;
+  border-radius: var(--borda-radius);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transicao);
+  display: inline-block;
+}
+
+.btn-primario:hover {
+  background: var(--azul-principal);
+  color: var(--branco);
+  box-shadow: var(--sombra);
+}
+
+/* Cards */
+.ticket-card {
+  background: var(--branco);
+  border-radius: var(--borda-radius);
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: var(--sombra);
+  transition: var(--transicao);
+}
+
+.ticket-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Formulários */
+.form-grupo {
+  margin-bottom: 20px;
+}
+
+.form-grupo label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--azul-escuro);
+}
+
+.form-grupo input[type="text"],
+.form-grupo input[type="email"],
+.form-grupo textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--cinza);
+  border-radius: var(--borda-radius);
+  transition: var(--transicao);
+}
+
+.form-grupo input[type="text"]:focus,
+.form-grupo input[type="email"]:focus,
+.form-grupo textarea:focus {
+  outline: none;
+  border-color: var(--azul-principal);
+  box-shadow: 0 0 0 2px rgba(0, 100, 148, 0.1);
+}
+
+/* Status do Ticket */
+.status-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.status-aberto {
+  background-color: var(--azul-claro);
+  color: var(--branco);
+}
+
+.status-fechado {
+  background-color: var(--cinza);
+  color: var(--preto);
+}
+
+.status-andamento {
+  background-color: var(--amarelo);
+  color: var(--preto);
+}
+
+/* Animações */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
+  .grid-layout {
+    display: block;
+  }
+  
+  .ticket-card {
+    margin: 15px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .btn-primario {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}

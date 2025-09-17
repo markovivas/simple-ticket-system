@@ -1,0 +1,345 @@
+/* Importando as variáveis de referência */
+:root {
+  --azul-principal: #006494;
+  --azul-escuro: #003554;
+  --azul-claro: #0582ca;
+  --amarelo: #ffb700;
+  --cinza-claro: #f8f9fa;
+  --cinza: #e9ecef;
+  --preto: #212529;
+  --branco: #ffffff;
+  --verde-sucesso: #028c6a;
+  --vermelho-erro: #a94442;
+  --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --borda-radius: 8px;
+  --transicao: all 0.3s ease;
+}
+
+/* Estilo do Formulário de Ticket */
+.sts-ticket-form {
+  background: var(--branco);
+  padding: 30px;
+  border-radius: var(--borda-radius);
+  box-shadow: var(--sombra);
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+.sts-ticket-form p {
+  margin-bottom: 20px;
+}
+
+.sts-ticket-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--azul-escuro);
+}
+
+.sts-ticket-form input[type="text"],
+.sts-ticket-form textarea,
+.sts-ticket-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--cinza);
+  border-radius: var(--borda-radius);
+  transition: var(--transicao);
+  background-color: var(--cinza-claro);
+  color: var(--preto);
+}
+
+.sts-ticket-form input[type="text"]:focus,
+.sts-ticket-form textarea:focus,
+.sts-ticket-form select:focus {
+  outline: none;
+  border-color: var(--azul-principal);
+  box-shadow: 0 0 0 3px rgba(0, 100, 148, 0.15);
+}
+
+.sts-ticket-form small {
+  display: block;
+  margin-top: 5px;
+  color: #777;
+}
+
+/* Botão de Envio */
+.sts-ticket-form input[type="submit"] {
+  background: var(--azul-principal);
+  color: var(--branco);
+  padding: 12px 25px;
+  border-radius: var(--borda-radius);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transicao);
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.sts-ticket-form input[type="submit"]:hover {
+  background: var(--azul-escuro);
+  box-shadow: var(--sombra);
+}
+
+/* Alertas de Sucesso/Erro */
+.sts-alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: var(--borda-radius);
+  max-width: 700px;
+  margin: 20px auto;
+  font-weight: 500;
+}
+
+.sts-alert-success {
+  background-color: #e6f7ee;
+  border-left: 5px solid var(--verde-sucesso);
+  color: var(--verde-sucesso);
+}
+
+.sts-alert-error {
+  background-color: #f2dede;
+  border-left: 5px solid var(--vermelho-erro);
+  color: var(--vermelho-erro);
+}
+
+/* Estilo customizado para o input de arquivo */
+.sts-file-input-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.sts-file-input-wrapper input[type=file] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.sts-file-input-button {
+  background: var(--cinza);
+  color: var(--preto);
+  padding: 10px 15px;
+  border-radius: var(--borda-radius);
+  border: 1px solid #ccc;
+  display: inline-block;
+}
+
+.sts-file-name {
+  margin-left: 10px;
+  font-style: italic;
+  color: #555;
+}
+
+/* Estilo da Lista de Tickets (Meus Tickets) */
+.sts-section-title {
+  color: var(--azul-escuro);
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+  border-bottom: 2px solid var(--cinza);
+  padding-bottom: 10px;
+}
+
+.sts-ticket-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.sts-ticket-card {
+  background: var(--branco);
+  border-radius: var(--borda-radius);
+  box-shadow: var(--sombra);
+  padding: 20px;
+  text-decoration: none;
+  color: var(--preto);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transicao);
+  position: relative;
+  border-left: 5px solid var(--cinza);
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.sts-ticket-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.sts-card-ticket-id {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: var(--azul-escuro);
+  color: var(--branco);
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: var(--borda-radius);
+}
+
+.sts-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.sts-card-title {
+  font-size: 1.2rem;
+  color: var(--azul-escuro);
+  margin: 0;
+  font-weight: 600;
+}
+
+.sts-ticket-status {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 15px;
+  color: var(--branco);
+  white-space: nowrap;
+}
+
+.sts-card-body p {
+  margin: 0 0 10px;
+  color: #555;
+}
+
+.sts-card-footer {
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 1px solid var(--cinza);
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Cores dos Status */
+/* Aberto: Laranja */
+.sts-ticket-card.aberto { border-left-color: var(--amarelo); }
+.sts-ticket-status.aberto { background-color: var(--amarelo); color: var(--preto); }
+
+/* Em Andamento: Azul */
+.sts-ticket-card.em-andamento { border-left-color: var(--azul-claro); }
+.sts-ticket-status.em-andamento { background-color: var(--azul-claro); color: var(--branco); }
+
+/* Resolvido: Verde */
+.sts-ticket-card.resolvido { border-left-color: var(--verde-sucesso); }
+.sts-ticket-status.resolvido { background-color: var(--verde-sucesso); color: var(--branco); }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Estilos para a página de um único ticket (single-ticket.php) */
+.sts-content-area {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.sts-single-ticket {
+  background: var(--branco);
+  padding: 30px;
+  border-radius: var(--borda-radius);
+  box-shadow: var(--sombra);
+}
+
+.sts-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sts-single-ticket-id {
+  background: var(--cinza);
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: var(--azul-escuro);
+}
+
+.sts-ticket-header .sts-ticket-title {
+  font-size: 2rem;
+  color: var(--azul-escuro);
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.sts-ticket-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--cinza);
+}
+
+.sts-ticket-meta .sts-ticket-status {
+  order: -1; /* Coloca o status primeiro */
+}
+
+.sts-ticket-content,
+.sts-ticket-attachments {
+  margin-bottom: 30px;
+}
+
+.sts-ticket-content h3,
+.sts-ticket-attachments h3 {
+  color: var(--azul-escuro);
+  border-bottom: 2px solid var(--cinza);
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+/* Estilos para a seção de respostas (comentários do WordPress) */
+.sts-ticket-responses .comments-title {
+  font-size: 1.5rem;
+  color: var(--azul-escuro);
+}
+
+.sts-ticket-responses .comment-list {
+  list-style: none;
+  padding: 0;
+}
+
+.sts-ticket-responses .comment-body {
+  background: var(--cinza-claro);
+  padding: 20px;
+  border-radius: var(--borda-radius);
+  margin-bottom: 20px;
+  border-left: 4px solid var(--azul-principal);
+}
+
+.sts-ticket-responses .comment-meta {
+  margin-bottom: 10px;
+}
+
+.sts-ticket-responses .comment-form-comment textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--cinza);
+  border-radius: var(--borda-radius);
+}
+
+.sts-ticket-responses .form-submit .submit {
+  background: var(--azul-principal);
+  color: var(--branco);
+  padding: 10px 20px;
+  border-radius: var(--borda-radius);
+  border: none;
+  cursor: pointer;
+  transition: var(--transicao);
+}
+
+.sts-ticket-responses .form-submit .submit:hover {
+  background: var(--azul-escuro);
+}
