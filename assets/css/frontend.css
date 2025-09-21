@@ -2,6 +2,7 @@
 :root {
   --azul-principal: #006494;
   --azul-escuro: #003554;
+  --azul-brilhante: #00a6fb;
   --azul-claro: #0582ca;
   --amarelo: #ffb700;
   --cinza-claro: #f8f9fa;
@@ -23,6 +24,7 @@
   box-shadow: var(--sombra);
   max-width: 700px;
   margin: 20px auto;
+  animation: fadeIn 0.5s ease-out forwards;
 }
 
 .sts-ticket-form p {
@@ -44,7 +46,7 @@
   border: 1px solid var(--cinza);
   border-radius: var(--borda-radius);
   transition: var(--transicao);
-  background-color: var(--cinza-claro);
+  background-color: var(--branco);
   color: var(--preto);
 }
 
@@ -52,13 +54,20 @@
 .sts-ticket-form textarea:focus,
 .sts-ticket-form select:focus {
   outline: none;
-  border-color: var(--azul-principal);
-  box-shadow: 0 0 0 3px rgba(0, 100, 148, 0.15);
+  border-color: var(--azul-claro);
+  box-shadow: 0 0 0 3px rgba(5, 130, 202, 0.2);
 }
 
 .sts-ticket-form small {
   display: block;
   margin-top: 5px;
+  color: #777;
+}
+
+/* Estilo para o texto de ajuda dentro do label */
+.sts-label-helper {
+  display: inline;
+  font-weight: 400;
   color: #777;
 }
 
@@ -78,7 +87,7 @@
 }
 
 .sts-ticket-form input[type="submit"]:hover {
-  background: var(--azul-escuro);
+  background: var(--azul-claro);
   box-shadow: var(--sombra);
 }
 
@@ -121,12 +130,13 @@
 }
 
 .sts-file-input-button {
-  background: var(--cinza);
-  color: var(--preto);
+  background: var(--branco);
+  color: var(--azul-principal);
   padding: 10px 15px;
   border-radius: var(--borda-radius);
-  border: 1px solid #ccc;
+  border: 1px solid var(--azul-principal);
   display: inline-block;
+  transition: var(--transicao);
 }
 
 .sts-file-name {
